@@ -1,7 +1,14 @@
 """docs"""
 from django.shortcuts import render
+from . models import Post 
 
-def index(request):
+
+def posts_list(request):
     """docstring"""
-    animals = ['Zebra', 'Cat', 'Dog']
-    return render(request, 'blog/index.html', context={'animals': animals})
+    posts = Post.objects.all()
+    return render(request, 'blog/posts_list.html', context={'posts': posts})
+
+def post_detail(request, slug):
+    """post detail"""
+    post = Post.objects.get(slug__iexact=slug)
+    return render(request, 'blog/post_detail.html', context={'post': post})
