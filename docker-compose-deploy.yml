@@ -1,0 +1,25 @@
+version: '3.7'
+
+
+services: 
+    blogengine:
+        build: 
+            context: .
+        volumes: 
+            - static_data:/vol/web
+        environment: 
+            - SECRET_KEY=samplesecretkey123
+            - ALLOWED_HOSTS=www.troposfera.club
+
+    proxy:
+        build: 
+            context: ./proxy
+        volumes: 
+            - static_data:/vol/static
+        ports: 
+            - "80:8080"
+        depends_on: 
+            - blogengine
+
+volumes: 
+    static_data:
