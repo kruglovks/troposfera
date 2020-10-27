@@ -1,0 +1,20 @@
+Troposfera website dairies.
+
+1. 24 oktober 2020
+
+Starter project hosted on VPN server (Ubuntu 20.04) via Docker.
+Project includes: 
+- Django project, proxy settings and docker files
+- basic model with reverse url method
+- basic routing via include
+- basic Django html templates with inheritance via 'extends' and 'block'
+Project files are moved to remote via rsync.
+Project is run via docker-compose up.
+Project is pushed to Github for backup.
+
+2. 27 oktober 2020
+
+Added many-to-many relation to models,
+properties retrieval using many-to-many relation via 'related_name' property,
+'include' function is used to organise repeating html elements,
+mixin is created for getting objects details.
