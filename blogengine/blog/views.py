@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from . models import Post, Tag
 from . forms import TagForm, PostForm
 from django.views.generic import View
-from . utils import DetailObjectMixin, CreateObjectMixin
+from . utils import DetailObjectMixin, CreateObjectMixin, UpdateObjectMixin, DeleteObjectMixin
 
 
 
@@ -36,3 +36,28 @@ class TagCreate(CreateObjectMixin, View):
 class PostCreate(CreateObjectMixin, View):
     model = PostForm
     template = 'blog/post_create.html'
+
+
+
+class TagUpdate(UpdateObjectMixin, View):
+    model = Tag
+    form_class = TagForm
+    template = 'blog/tag_update.html'
+
+
+class PostUpdate(UpdateObjectMixin, View):
+    model = Post
+    form_class = PostForm
+    template = 'blog/post_update.html'
+
+
+class TagDelete(DeleteObjectMixin, View):
+    model = Tag
+    template = 'blog/tag_delete.html'
+    redirect_url = 'tags_list_url'
+
+
+class PostDelete(DeleteObjectMixin, View):
+    model = Post
+    template = 'blog/post_delete.html'
+    redirect_url = 'posts_list_url'

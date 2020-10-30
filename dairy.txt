@@ -27,3 +27,8 @@ mixin is created for getting objects details.
 Django forms added (ModelForm).
 Cleaning method added using 'cleaned_data' and 'ValidationError' alerts.
 
+
+4. 30 oktober 2020
+
+Added full CRUD functionality.
+
