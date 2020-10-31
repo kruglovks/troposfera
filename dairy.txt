@@ -32,3 +32,6 @@ Cleaning method added using 'cleaned_data' and 'ValidationError' alerts.
 
 Added full CRUD functionality.
 
+5. 31 oktober 2020
+
+Added user restrictions, pagination, basic search.
